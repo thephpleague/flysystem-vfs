@@ -1,5 +1,7 @@
 # Flysystem Adapter for VFS
 
+This is a [VFS](https://github.com/adlawson/php-vfs) adapter for [Flysystem](http://flysystem.thephpleague.com/). It allows you to mount a virtual filesystem.
+
 ## Installation
 
 ```bash
