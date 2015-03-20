@@ -76,11 +76,23 @@ class VfsAdapter extends Local
     /**
      * {@inheritdoc}
      */
-    public function applyPathPrefix($path)
+    public function getPathPrefix()
     {
-        $path = parent::applyPathPrefix($path);
+        return $this->wrapPath(parent::getPathPrefix());
+    }
 
-        return $this->wrapPath($path);
+    /**
+     * {@inheritdoc}
+     */
+    public function removePathPrefix($path)
+    {
+        if ($this->getPathPrefix() === null) {
+            return $path;
+        }
+
+        $length = strlen($this->getPathPrefix());
+
+        return substr($path, $length);
     }
 
     /**
