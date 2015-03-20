@@ -1,0 +1,21 @@
+{
+  "name": "anahkiasen/flysystem-vfs",
+  "description": "A VFS adapter for Flysystem",
+  "require": {
+    "php": ">=5.4.0",
+    "league/flysystem": "~1.0",
+    "php-vfs/php-vfs": "~1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "League\\Flysystem\\Vfs\\": "src"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maxime Fabre",
+      "email": "ehtnam6@gmail.com"
+    }
+  ]
+}
