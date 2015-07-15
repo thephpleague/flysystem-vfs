@@ -10,7 +10,7 @@ This is a [VFS](https://github.com/adlawson/php-vfs) adapter for [Flysystem](htt
 ## Installation
 
 ```bash
-composer require thephpleague/flysystem-vfs
+composer require league/flysystem-vfs
 ```
 
 ## Usage
