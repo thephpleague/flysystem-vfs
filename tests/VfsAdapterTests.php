@@ -39,6 +39,17 @@ class VfsAdapterTests extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider adapterProvider
      */
+    public function testCanRemoveFile(VfsAdapter $adapter)
+    {
+        $adapter->write('foo.txt', 'foobar', new Config());
+        $adapter->delete('foo.txt');
+
+        $this->assertFalse($adapter->has('foo.txt'));
+    }
+
+    /**
+     * @dataProvider adapterProvider
+     */
     public function testCanCreateDirectory(VfsAdapter $adapter)
     {
         $adapter->createDir('foo', new Config());
