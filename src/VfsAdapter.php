@@ -18,6 +18,8 @@ class VfsAdapter extends Local
      */
     public function __construct(FileSystem $vfs)
     {
+        $this->permissionMap = static::$permissions;
+
         $this->vfs = $vfs;
     }
 
