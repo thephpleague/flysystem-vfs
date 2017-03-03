@@ -64,6 +64,7 @@ class VfsAdapterTests extends TestCase
     public function testCanRemoveDirectory(VfsAdapter $adapter)
     {
         $adapter->createDir('foo', new Config());
+        $adapter->write('foo/foo.txt', 'foobar', new Config());
         $adapter->deleteDir('foo');
 
         $this->assertFalse($adapter->has('foo'));

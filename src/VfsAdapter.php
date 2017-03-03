@@ -4,6 +4,7 @@ namespace League\Flysystem\Vfs;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Config;
 use League\Flysystem\Util;
+use SplFileInfo;
 use VirtualFileSystem\FileSystem;
 
 class VfsAdapter extends Local
@@ -108,5 +109,24 @@ class VfsAdapter extends Local
         $path   = str_replace($scheme, null, $path);
 
         return $scheme.$path;
+    }
+
+    /**
+     * @param SplFileInfo $file
+     */
+    protected function deleteFileInfoObject(SplFileInfo $file)
+    {
+        $path = $file->getRealPath() ?: $file->getPathname();
+
+        switch ($file->getType()) {
+            case 'dir':
+                rmdir($path);
+                break;
+            case 'link':
+                unlink($file->getPathname());
+                break;
+            default:
+                unlink($path);
+        }
     }
 }

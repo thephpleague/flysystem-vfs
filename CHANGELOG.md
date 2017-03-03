@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.0.3 - 2017-02-03
+
+### Fixed
+- Fixed issue when deleting a VFS folder with files in it
+
 ## 1.0.2 - 2015-11-05
 
 ### Fixed
