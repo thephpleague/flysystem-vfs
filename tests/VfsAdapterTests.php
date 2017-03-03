@@ -1,9 +1,10 @@
 <?php
 use League\Flysystem\Config;
 use League\Flysystem\Vfs\VfsAdapter;
+use PHPUnit\Framework\TestCase;
 use VirtualFileSystem\FileSystem;
 
-class VfsAdapterTests extends PHPUnit_Framework_TestCase
+class VfsAdapterTests extends TestCase
 {
     public function adapterProvider()
     {
